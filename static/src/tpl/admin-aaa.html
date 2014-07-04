@@ -1,0 +1,39 @@
+<div ng-controller="adminUserCtrl">
+    <div class="panel">
+        <div class="inner page-header"><strong>数据录入</strong></div>
+        <div class="inner"></div>
+        <form class="form-horizontal" method="post">
+            <fieldset>
+        <div class="control-group">
+
+
+            <label class="control-label">用户编号</label>
+            <div class="controls">
+                <input type="text" placeholder="id" name="用户编号" ng-model="test.id" gen-tooltip="validateTooltip" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">用户名称</label>
+            <div class="controls">
+                <input type="text" placeholder="name" name="用户名称" ng-model="test.name" gen-tooltip="validateTooltip" required/>
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">证件号码</label>
+            <div class="controls">
+                <input type="text" placeholder="zjh" name="证件号码" ng-model="test.zjh" gen-tooltip="validateTooltip" required/>
+            </div>
+        </div>
+            </fieldset>
+
+        <div >
+            <button class="pure-button success-bg" ng-click="submit()">保存</button>
+            <button class="pure-button info-bg" ng-click="reset()">重置</button>
+        </div>
+
+        </form>
+    </div>
+    <div gen-pagination="pagination"></div>
+</div>
+<div gen-modal="unSaveModal">确定要离开？未保存的数据将会丢失！</div>

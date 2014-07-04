@@ -1,0 +1,47 @@
+<div class="pure-u-1 menu">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal wrap">
+        <ul class="pure-menu-logo">
+            <li><a class="pure-menu-img" href="/home"><img height="50" ng-src="{{global.logo}}"/></a></li>
+            <li><a href="/home">{{global.title}}</a></li>
+        </ul>
+        <ul class="right user" ng-if="global.isLogin">
+
+            <li ng-if="global.isDesktop"><a href="/home"><i class="fa fa-home"></i>{{global.user.name}}</a></li>
+            <li ng-if="global.isDesktop"><a ng-click="logout()"><i class="fa fa-signout"></i>退出</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="pure-g-r wrap1">
+
+    <div class="pure-u-1-3 aside">
+        <div class="panel pure-menu pure-menu-open">
+            <ul class="text-center">
+                <li ng-class="{active: parent.viewPath=='index'}">
+                    <a href="/admin/index"><i class="fa fa-chevron-right right"></i>用户查询</a>
+                </li>
+                <li ng-class="{active: parent.viewPath=='aaa'}">
+                    <a href="/admin/aaa"><i class="fa fa-chevron-right right"></i>数据录入</a>
+                </li>
+                <li ng-class="{active: parent.viewPath=='user'}">
+                    <a href="/admin/user"><i class="fa fa-chevron-right right"></i>用户管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-4">
+        <div ng-include src="parent.getTpl">
+        </div>
+    </div>
+</div>

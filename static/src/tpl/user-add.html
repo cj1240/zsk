@@ -1,0 +1,63 @@
+<div ng-controller="UserInputCtrl">
+    <div class="panel">
+        <div class="inner page-header"><strong>数据录入</strong></div>
+        <div class="inner"></div>
+        <form class="form-horizontal" method="post">
+            <fieldset>
+                <div class="control-group">
+
+
+                    <label class="control-label">用户编号</label>
+                    <div class="controls">
+                        <input type="text" placeholder="id" name="用户编号" ng-model="test.id" gen-tooltip="validateTooltip" required/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">用户名称</label>
+                    <div class="controls">
+                        <input type="text" placeholder="name" name="用户名称" ng-model="test.name" gen-tooltip="validateTooltip" required/>
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">证件号码</label>
+                    <div class="controls">
+                        <input type="text" placeholder="zjh" name="证件号码" ng-model="test.zjh" gen-tooltip="validateTooltip" required/>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="text-center">
+                <button class="pure-button success-bg" ng-click="submit()">保存</button>
+                <button class="pure-button info-bg" ng-click="reset()">重置</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+    <div class="panel">
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+            <tr>
+                <th><i class="fa fa-sort-alpha-asc"></i><a ng-click="predicate='name';reverse=!reverse">a</a></th>
+                <th><i class="fa fa-sort-alpha-asc"></i><a ng-click="predicate='email';reverse=!reverse">b</a></th>
+                <th><i class="fa fa-sort-alpha-asc"></i><a ng-click="predicate='role';reverse=!reverse">c</a></th>
+                <th><i class="fa fa-sort-alpha-asc"></i><a ng-click="predicate='score';reverse=!reverse">d</a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="test in testList | orderBy:predicate:reverse">
+                <td class="text-center">{{test.a}}</td>
+                <td class="text-center">{{test.b}}</td>
+                <td class="text-center">{{test.c}}</td>
+                <td class="text-center">{{test.d}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div gen-pagination="pagination"></div>
+</div>

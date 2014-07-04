@@ -1,0 +1,6 @@
+<div ng-controller="userArticleCtrl">
+    <div class="page-header inner">
+        <a class="pure-button list-model right" title="{{parent.sumModel?'摘要模式':'简洁模式'}}" ng-if="!global.isPocket" ng-class="{'info-bg':parent.sumModel}" ng-click="setListModel()"><i class="fa fa-th-large"></i></a>
+        <strong class="dw">{{parent.title}}</strong>
+    </div>
+</div>
