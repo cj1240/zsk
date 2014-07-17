@@ -1,0 +1,22 @@
+{
+   "additionalFeatures": "Contour Display, Near Field Communications (NFC),...",
+   "android": {
+       "os": "Android 2.3",
+       "ui": "Android"
+   },
+   
+   "images": [
+      "phones/Images/nexus-s.5.jpg",
+       "phones/Images/nexus-s.7.jpg",
+       "phones/Images/nexus-s.10.jpg" 
+   ],
+   "storage": {
+       "flash": "16384MB",
+       "ram": "512MB"
+   },
+   "connectivity":{
+   "infrared": true,
+   "gps": false 
+
+   }
+ }
