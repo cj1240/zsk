@@ -1,0 +1,47 @@
+<div ng-controller="ggCtrl">
+    <div class="page-header inner">
+        <strong>公告维护</strong>
+    </div>
+    <div class="panel">
+        <label>标题：</label>
+        <input type="text" placeholder=""  name="标题" ng-model="ggname"  gen-tooltip="validateTooltip" required />
+        <label>内容：</label>
+        <textarea class="pure-input-1-2" name="内容" id="wmd-input" rows="2" ng-model="ggnr"  gen-tooltip="validateTooltip" required>
+        </textarea>
+        <button class="pure-button success-bg" ng-click="add()">更新</button>
+
+    </div>
+    <div class="pure-control-group">
+
+    </div>
+        <div class="inner">
+            <div class="close" gen-pagination="pagination"></div>
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                <tr>
+
+                    <th><i class="fa fa-sort-alpha-asc"></i><a ng-click="predicate='datetime';reverse=!reverse">更新时间</a></th>
+                    <th><i class="fa fa-sort-alpha-asc"></i><a ng-click="predicate='title';reverse=!reverse">标题</a></th>
+                    <th><i class="fa fa-sort-amount-asc"></i><a ng-click="predicate='yhmc';reverse=!reverse">操作员</a></th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr ng-repeat="tz in tzList| orderBy:predicate:reverse">
+                    <td class="text-center"><i class="fa fa-pencil success" ng-click="update(tz._id,tz.title,tz.content);"></i>{{tz.datetime|formatDate:true}}</td>
+                    <td class="text-left">{{tz.title}}</td>
+                    <td class="text-center">{{tz.yhmc}}</td>
+
+                    <td><button class="pure-button success-bg" ng-click="delete(tz._id)">删除</button></td>
+                </tr>
+                </tbody>
+
+            </table>
+            <div class="close" gen-pagination="pagination"></div>
+            <div class="inner well text-left">
+<p></p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
